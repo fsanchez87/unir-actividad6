@@ -1,0 +1,13 @@
+img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.img-wp {
+  border-right: 1px solid #dee2e6;
+}
+
+.container {
+  margin-top: 80px;
+}

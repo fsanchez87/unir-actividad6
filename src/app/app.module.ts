@@ -8,6 +8,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { FormComponent } from './components/form/form.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PopupComponent } from './components/popup/popup.component';
     UserListComponent,
     UserCardComponent,
     FormComponent,
-    PopupComponent
+    PopupComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

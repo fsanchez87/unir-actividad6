@@ -9,6 +9,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { FormComponent } from './components/form/form.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     UserCardComponent,
     FormComponent,
     PopupComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

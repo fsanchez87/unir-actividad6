@@ -1,7 +1,8 @@
-<div class="card p-3" style="width: 20rem;">
-    <img src="https://randomuser.me/api/portraits/men/40.jpg" class="card-img-top rounded-circle" alt="...">
+<div class="card p-3" style="width: 20rem; min-height: 26rem;">
+    <img [src]="myUser.image" class="card-img-top rounded-circle"
+        [alt]="myUser.first_name + ' ' + myUser.last_name + ' image'">
     <div class="card-body p-1">
-        <h5 class="card-title text-center text-secondary">Francisco Sánchez Garrido</h5>
+        <h5 class="card-title text-center text-secondary">{{myUser.first_name + ' ' + myUser.last_name}}</h5>
         <div class="d-flex justify-content-center">
 
             <button type="button" class="btn btn-outline-secondary border-0">

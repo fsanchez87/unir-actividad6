@@ -12,4 +12,8 @@ export class UsersService {
   getAll(pUrl: string = this.baseUrl): Observable<any> {
     return this.httpClient.get<any>(pUrl);
   }
+
+  getById(pId: number): Observable<any> {
+    return this.httpClient.get<any>(`${this.baseUrl + '/' + pId}`);
+  }
 }

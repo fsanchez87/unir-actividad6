@@ -5,12 +5,12 @@
         <h5 class="card-title text-center text-secondary">{{myUser.first_name + ' ' + myUser.last_name}}</h5>
         <div class="d-flex justify-content-center">
 
-            <button type="button" class="btn btn-outline-secondary border-0">
+            <button type="button" class="btn btn-outline-secondary border-0" [routerLink]="['/user', myUser.id]">
                 <i class="fa-solid fa-magnifying-glass fa-3x"></i>
                 <p>Ver detalle</p>
             </button>
 
-            <button type="button" class="btn btn-outline-secondary border-0">
+            <button type="button" class="btn btn-outline-secondary border-0" [routerLink]="['/updateuser', myUser.id]" >
                 <i class="fa-solid fa-arrows-rotate fa-3x"></i>
                 <p>Actualizar</p>
             </button>

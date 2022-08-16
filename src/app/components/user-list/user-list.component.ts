@@ -15,7 +15,6 @@ export class UserListComponent implements OnInit {
     // Load the user list
     this.usersService.getAll().subscribe((data: any) => {
       this.arrUsers = data.data
-      console.log(data)
     });
   }
 }

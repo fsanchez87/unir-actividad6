@@ -8,13 +8,17 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-   arrUsers: User[] = [];
+  arrUsers: User[] = [];
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
     // Load the user list
-    this.usersService.getAll().subscribe((data: any) => {
-      this.arrUsers = data.data
-    });
+    try {
+      this.usersService.getAll().subscribe((data: any) => {
+        this.arrUsers = data.data;
+      });
+    } catch (error: any) {
+      console.log(error.message);
+    }
   }
 }

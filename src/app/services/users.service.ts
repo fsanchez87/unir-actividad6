@@ -16,4 +16,7 @@ export class UsersService {
   getById(pId: number): Observable<any> {
     return this.httpClient.get<any>(`${this.baseUrl + '/' + pId}`);
   }
+  delete(pId: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.baseUrl + '/' + pId}`);
+  }
 }

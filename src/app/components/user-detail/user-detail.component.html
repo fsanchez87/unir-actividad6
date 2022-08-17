@@ -3,7 +3,8 @@
     <div class="card border-0" style="height: 60vh">
         <div class="row ">
             <div class="col-12 col-md-6 pe-5 img-wp">
-                <img [src]="myUser?.image" class="card-img rounded-circle" [alt]="myUser?.first_name + ' ' + myUser?.last_name + ' image'">
+                <img [src]="myUser?.image" class="card-img rounded-circle"
+                    [alt]="myUser?.first_name + ' ' + myUser?.last_name + ' image'">
             </div>
             <div class="col-12 col-md-6 ">
                 <div class="card-body ps-5">
@@ -15,9 +16,12 @@
                     </div>
                     <div class="btn-group btn-group-lg mt-4" role="group" aria-label="Large button group"
                         style="width:100%;">
-                        <button type="button" class="btn btn-outline-dark">Eliminar</button>
-                        <button type="button" class="btn btn-outline-dark" [routerLink]="['/updateuser', myUser?.id]"> Actualizar</button>
-                        <button type="button" class="btn btn-outline-dark" [routerLink]="['/home']" >Volver al listado</button>
+                        <button type="button" class="btn btn-outline-dark"
+                            (click)="alertConfirmation()">Eliminar</button>
+                        <button type="button" class="btn btn-outline-dark" [routerLink]="['/updateuser', myUser?.id]">
+                            Actualizar</button>
+                        <button type="button" class="btn btn-outline-dark" [routerLink]="['/home']">Volver al
+                            listado</button>
                     </div>
                 </div>
 

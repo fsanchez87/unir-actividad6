@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import Swal from 'sweetalert2';
@@ -13,7 +13,8 @@ export class UserDetailComponent implements OnInit {
   myUser!: User | any;
   constructor(
     private usersService: UsersService,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -58,15 +59,14 @@ export class UserDetailComponent implements OnInit {
                   'CancError',
                   `${data.error}`,
                   'error'
-                );
-              }
+                  );
+                }
+                this.router.navigate(['/home']);
             });
           } catch (error: any) {
             console.log(error.message);
           }
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             'Cancelado',
             'El usuario no ha sido borrado',

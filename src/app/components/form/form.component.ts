@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-form',
@@ -10,9 +12,13 @@ import { User } from 'src/app/interfaces/user.interface';
 export class FormComponent implements OnInit {
   formUser: FormGroup;
   submitted: boolean = false;
-  newUser!: User;
+  updateUser: boolean = false;
 
-  constructor() {
+  constructor(
+    private userService: UsersService,
+    private router: Router,
+    private activateRoute: ActivatedRoute
+  ) {
     this.formUser = new FormGroup({
       first_name: new FormControl('', [
         Validators.required,
@@ -35,7 +41,14 @@ export class FormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // check if update user or new user
+    this.activateRoute.params.subscribe((params: any) => {
+      if(params.id){
+        this.updateUser = true;
+      }
+    })
+  }
 
   // convenience getter for easy access to form fields
   get f() {
@@ -43,13 +56,14 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.formUser.value);
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.formUser.invalid) {
       return;
     }
+
+
 
     // display form values on success
     console.log(

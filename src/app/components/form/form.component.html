@@ -1,5 +1,6 @@
 <form novalidate [formGroup]="formUser" (ngSubmit)="onSubmit()" class="container mt-3">
-    <h1>NUEVO USUARIO</h1>
+    <h1 *ngIf="updateUser else elseBlockH1">ACTUALIZAR USUARIO</h1>
+    <ng-template #elseBlockH1><h1>NUEVO USUARIO</h1></ng-template>
 
     <div class="mb-3">
         <label for="first_name" class="form-label">Nombre Usuario</label>
@@ -49,5 +50,9 @@
 
     </div>
 
-    <button type="submit" class="btn btn-outline-secondary">Guardar</button>
+    <button type="submit" class="btn btn-outline-secondary">
+        <span *ngIf="updateUser else elseBlock">Actualizar</span>
+        <ng-template #elseBlock>Guardar</ng-template>
+
+    </button>
 </form>

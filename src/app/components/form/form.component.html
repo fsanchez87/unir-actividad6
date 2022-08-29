@@ -31,7 +31,7 @@
 
         <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
             <div *ngIf="f['email'].errors?.['required']">El Email de Usuario es requerido</div>
-            <div *ngIf="f['email'].errors?.['pattern']">El correo electrónico debe ser una dirección válida
+            <div *ngIf="f['email'].errors?.['email']">El correo electrónico debe ser una dirección válida
             </div>
         </div>
 

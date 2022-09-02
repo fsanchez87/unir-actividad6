@@ -1,0 +1,15 @@
+ul hr {
+  height: 1px;
+  width: 15%;
+  color: #6c757d;
+  background-color: #6c757d;
+}
+
+ul a {
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(220, 217, 217);
+  border-color: rgb(220, 217, 217);
+}

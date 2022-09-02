@@ -1,27 +1,23 @@
-<div class="card p-3" style="width: 20rem; min-height: 26rem;">
+<div class="card" style="">
     <img [src]="myUser.image" class="card-img-top rounded-circle"
         [alt]="myUser.first_name + ' ' + myUser.last_name + ' image'">
-    <div class="card-body p-1">
-        <h5 class="card-title text-center text-secondary">{{myUser.first_name + ' ' + myUser.last_name}}</h5>
-        <div class="d-flex justify-content-center">
-
+    <div class="card-body pt-2">
+        <h6 class="text-center text-secondary">{{myUser.first_name + ' ' + myUser.last_name}}</h6>
+        <div class="d-flex justify-content-center gap-1">
             <button type="button" class="btn btn-outline-secondary border-0" [routerLink]="['/user', myUser.id]">
-                <i class="fa-solid fa-magnifying-glass fa-3x"></i>
+                <i class="material-symbols-outlined">search</i>
                 <p>Ver detalle</p>
             </button>
-
+            
             <button type="button" class="btn btn-outline-secondary border-0" [routerLink]="['/updateuser', myUser.id]" >
-                <i class="fa-solid fa-arrows-rotate fa-3x"></i>
+                <i class="material-symbols-outlined">sync</i>
                 <p>Actualizar</p>
             </button>
-
+            
             <button type="button" class="btn btn-outline-secondary border-0" (click)="alertConfirmation()" >
-                <i class="fa-solid fa-trash-can fa-3x"></i>
+                <i class="material-symbols-outlined">delete</i>
                 <p>Borrar</p>
             </button>
-
-            
         </div>
-        
     </div>
 </div>

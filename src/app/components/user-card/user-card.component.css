@@ -1,10 +1,19 @@
 .btn {
-  padding: 5px;
+  padding: 1px;
   width: calc(50% - 10px);
 }
 
 img {
-  width: 220px;
-  height: auto;
+  width: auto;
+  height: 13rem;
   margin: 0 auto;
+  padding-top: 16px;
+}
+
+.card-body {
+  padding: 1px;
+}
+
+h6 {
+  font-size: 0.9rem;
 }

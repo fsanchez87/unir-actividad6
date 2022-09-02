@@ -1,25 +1,58 @@
-<form class="container mt-3">
-    <h1>NUEVO USUARIO</h1>
+<form novalidate [formGroup]="formUser" (ngSubmit)="onSubmit()" class="container mt-3">
+    <h1 *ngIf="updateUser else elseBlockH1">ACTUALIZAR USUARIO</h1>
+    <ng-template #elseBlockH1><h1>NUEVO USUARIO</h1></ng-template>
 
     <div class="mb-3">
-        <label for="name" class="form-label">Nombre Usuario</label>
-        <input type="text" class="form-control" id="name">
+        <label for="first_name" class="form-label">Nombre Usuario</label>
+        <input type="text" class="form-control" id="first_name" formControlName="first_name"
+            [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }" />
+
+        <div *ngIf="submitted && f['first_name'].errors" class="invalid-feedback">
+            <div *ngIf="f['first_name'].errors?.['required']">El Nombre de Usuario es requerido</div>
+            <div *ngIf="f['first_name'].errors?.['minlength']">El Nombre debe tener al menos 4 caracteres</div>
+        </div>
+
     </div>
 
     <div class="mb-3">
-        <label for="lastname" class="form-label">Apellido Usuario</label>
-        <input type="text" class="form-control" id="lastname">
+        <label for="last_name" class="form-label">Apellido Usuario</label>
+        <input type="text" class="form-control" id="last_name" formControlName="last_name"
+            [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }">
+        <div *ngIf="submitted && f['last_name'].errors" class="invalid-feedback">
+            <div *ngIf="f['last_name'].errors?.['required']">El Apellido de Usuario es requerido</div>
+            <div *ngIf="f['last_name'].errors?.['minlength']">El Apellido debe tener al menos 4 caracteres</div>
+        </div>
     </div>
 
     <div class="mb-3">
         <label for="email" class="form-label">Email Usuario</label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email" formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors?.['required']">El Email de Usuario es requerido</div>
+            <div *ngIf="f['email'].errors?.['email']">El correo electrónico debe ser una dirección válida
+            </div>
+        </div>
+
     </div>
 
     <div class="mb-3">
         <label for="image" class="form-label">Imagen Usuario</label>
-        <input type="url" class="form-control" id="image">
+        <input type="url" class="form-control" id="image" formControlName="image"
+            [ngClass]="{ 'is-invalid': submitted && f['image'].errors }">
+
+        <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
+            <div *ngIf="f['image'].errors?.['required']">La imagen de Usuario es requerido</div>
+            <div *ngIf="f['image'].errors?.['pattern']">La URL de la imagen no es valida
+            </div>
+        </div>
+
     </div>
 
-    <button type="submit" class="btn btn-outline-secondary">Guardar</button>
+    <button type="submit" class="btn btn-outline-secondary">
+        <span *ngIf="updateUser else elseBlock">Actualizar</span>
+        <ng-template #elseBlock>Guardar</ng-template>
+
+    </button>
 </form>

@@ -2,19 +2,19 @@
 
     <div class="card border-0" style="height: 60vh">
         <div class="row ">
-            <div class="col-12 col-md-6 pe-5 img-wp">
+            <div class="col-12 col-md-6 img-wp">
                 <img [src]="myUser?.image" class="card-img rounded-circle"
                     [alt]="myUser?.first_name + ' ' + myUser?.last_name + ' image'">
             </div>
             <div class="col-12 col-md-6 ">
-                <div class="card-body ps-5">
+                <div class="card-body">
                     <div>
                         <h5 class="card-title">{{myUser?.first_name}}</h5>
                         <h5 class="card-title mt-4">{{myUser?.last_name}}</h5>
                         <p class="mt-4"><span class="fw-bold">Nombre Usuario: </span>{{myUser?.username}}</p>
                         <p class="mt-4"><span class="fw-bold">Email: </span>{{myUser?.email}}</p>
                     </div>
-                    <div class="btn-group btn-group-lg mt-4" role="group" aria-label="Large button group"
+                    <div class="btn-group btn-group mt-4" role="group" aria-label="Large button group"
                         style="width:100%;">
                         <button type="button" class="btn btn-outline-dark"
                             (click)="alertConfirmation()">Eliminar</button>

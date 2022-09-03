@@ -92,7 +92,6 @@ export class FormComponent implements OnInit {
     }
 
     let newUser = this.formUser.value;
-
     // update user
     if (newUser.id) {
       try {
@@ -125,10 +124,5 @@ export class FormComponent implements OnInit {
         Swal.fire('Error!', errorMessage, 'error');
       }
     }
-
-    // display form values on success
-    // console.log(
-    //   'SUCCESS!! :-)\n\n' + JSON.stringify(this.formUser.value, null, 4)
-    // );
   }
 }

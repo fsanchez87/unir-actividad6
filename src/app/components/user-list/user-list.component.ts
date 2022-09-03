@@ -30,7 +30,6 @@ export class UserListComponent implements OnInit {
         this.arrUsers = data.data;
         this.dataAPI = data;
       });
-      console.log('page finished');
     } catch (errors: any) {
       console.log(errors.message);
     }

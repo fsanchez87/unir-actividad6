@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -10,18 +11,19 @@ import { UsersService } from 'src/app/services/users.service';
 export class UserListComponent implements OnInit {
   dataAPI: any;
   arrUsers: User[] = [];
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
     // Load the user list
-    try {
-      this.usersService.getAll().subscribe((data: any) => {
+    this.usersService.getAll().subscribe({
+      next: (data: any) => {
         this.arrUsers = data.data;
         this.dataAPI = data;
-      });
-    } catch (error: any) {
-      console.log(error.message);
-    }
+      },
+      error: (error: any) => {
+        this.router.navigate(['**'], { queryParams: { error: error.message } });
+      },
+    });
   }
 
   page(nPage: number): void {

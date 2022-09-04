@@ -39,7 +39,7 @@ export class UserCardComponent implements OnInit {
               if (data.id) {
                 swalWithBootstrapButtons.fire(
                   'Usuario borrado!',
-                  `${data.first_name} ${data.last_name}`,
+                  JSON.stringify(data, null, 9),
                   'success'
                 );
               } else {

@@ -1,7 +1,7 @@
 <div class="card" style="">
     <img [src]="myUser.image" class="card-img-top rounded-circle"
         [alt]="myUser.first_name + ' ' + myUser.last_name + ' image'">
-    <div class="card-body pt-2">
+    <div class="card-body p-2">
         <h6 class="text-center text-secondary">{{myUser.first_name + ' ' + myUser.last_name}}</h6>
         <div class="d-flex justify-content-center gap-1">
             <button type="button" class="btn btn-outline-secondary border-0" [routerLink]="['/user', myUser.id]">

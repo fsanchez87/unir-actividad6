@@ -1,4 +1,4 @@
-<form novalidate [formGroup]="formUser" (ngSubmit)="onSubmit()" class="container mt-3">
+<form novalidate [formGroup]="formUser" (ngSubmit)="onSubmit()" class="container mt-3 p-3">
     <h1 *ngIf="updateUser else elseBlockH1">ACTUALIZAR USUARIO</h1>
     <ng-template #elseBlockH1><h1>NUEVO USUARIO</h1></ng-template>
 
